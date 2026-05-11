@@ -15,7 +15,7 @@ function Nav() {
         ☰
       </button>
       <ul className={`main-nav ${menuOpen ? 'open' : ''}`}>
-        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/home">Home</NavLink></li>
         <li className="dropdown-wrapper">
           <NavLink to="/careers">
             Careers <span className="chevron">▾</span>
