@@ -1,15 +1,25 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {NavLink, Link} from 'react-router-dom';
 import '../styles/nav.css';
 
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    function handleClick() {
+      setMenuOpen(false);
+    }
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, [menuOpen]);
 
   return (
-    <>
+    <div ref={navRef}>
       <button
         className="nav-toggle"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={(e) => { e.stopPropagation(); setMenuOpen(!menuOpen); }}
         aria-label="Toggle menu"
       >
         ☰
@@ -34,7 +44,7 @@ function Nav() {
         <li><NavLink to="/about">About us</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
-    </>
+    </div>
   );
 }
 
