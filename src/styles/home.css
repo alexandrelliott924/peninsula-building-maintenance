@@ -1,0 +1,101 @@
+a {
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+}
+
+.jump-flex {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 3em auto;
+}
+
+.jump-flex-layout {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    width: 42%;
+    border-radius: 20px;
+    padding: 1em 2em;
+    color: #1a2e52;
+}
+
+.jump-button {
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 0.6em 1em;
+    color: white;
+    background-color: #1a2e52;
+    border-width: 0;
+    width: 32%;
+    min-width: 7em;
+    transition: transform 0.3s ease;
+}
+
+.jump-button:hover {
+    transform: scale(1.1);
+}
+
+.jump-flex-title {
+    font-weight: 600;
+    font-size: 1.2em;
+}
+
+.jump-flex-text {
+    font-weight: 200;
+    font-size: 0.9em;
+}
+
+.arrow-right {
+    position: relative;
+    left: 0.5em
+}
+
+#careers-flex-layout {
+    background-color: hsla(206, 55%, 68%, 0.304);
+}
+
+#contact-flex-layout {
+    background-color:hsla(41, 64%, 78%, 0.304);
+}
+
+/* Mobile — screens less than 768px */
+@media (max-width: 768px) {
+  .jump-flex {
+    flex-flow: column;
+    gap: 2em;
+    margin: 2em auto;
+  }
+
+  .jump-flex-layout {
+    width: 100%;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5em;
+    padding: 1.5em;
+  }
+
+  .jump-button {
+    width: 100%;
+    padding: 0.8em 1.5em;
+  }
+
+  .jump-flex-title {
+    font-size: 1.1em;
+  }
+
+  .jump-flex-text {
+    font-size: 0.85em;
+  }
+
+  a {
+    font-size: 1em;
+  }
+}
