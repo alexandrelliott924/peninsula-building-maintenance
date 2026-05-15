@@ -1,0 +1,49 @@
+.footer-text {
+    color: white;
+}
+
+.footer {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+
+    height: 70px;
+    background-color: #1a2e52;
+}
+
+.PBM-footer-logo {
+    position: relative;
+    right: 3em;
+    width: 40px;
+}
+
+.enveloppe {
+    position: relative;
+    right: 0.4em;
+}
+
+.phone {
+    position: relative;
+    right: 0.4em;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-flow: column;
+        height: auto;
+        padding: 1.5em;
+        gap: 1em;
+        justify-content: center;
+    }
+
+    .PBM-footer-logo {
+        right: 0;
+        width: 35px;
+    }
+
+    .footer-text {
+        text-align: center;
+        font-size: 0.9em;
+    }
+}
