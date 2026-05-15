@@ -1,4 +1,3 @@
-import '../styles/App.css';
 import Header from'./header';
 import Home from './home';
 import Careers from'./careers';
