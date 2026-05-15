@@ -1,5 +1,5 @@
 import "../styles/footer.css"
-import logo from "../assets/PBM-white-icon.png"
+import logo from "../assets/logos/PBM-white-icon.png"
 
 function Footer() {
     return(

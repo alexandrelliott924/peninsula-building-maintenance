@@ -1,6 +1,6 @@
 import '../styles/header.css';
 import Nav from './nav';
-import PBMLogo from '../assets/PBM-logo.png';
+import PBMLogo from '../assets/logos/PBM-logo.png';
 
 function Header() {
 
