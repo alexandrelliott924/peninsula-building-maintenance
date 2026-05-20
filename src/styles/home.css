@@ -1,15 +1,8 @@
-a {
-    text-decoration: none;
-    font-size: 1.15em;
-    font-weight: 500;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: white;
-}
-
 .jump-flex {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-around;
+    gap: 2em 1em;
     margin: 3em auto;
 }
 
@@ -66,7 +59,20 @@ a {
 }
 
 #careers-flex-layout {
+    background-color: rgba(183, 94, 64, 0.6);
+}
+
+#skilled-worker-flex-layout {
     background-color: hsla(206, 55%, 68%, 0.304);
+}
+
+#TA-flex-layout {
+    background-color:hsla(41, 64%, 78%, 0.304);
+}
+
+#karratha-flex-layout {
+    background-color: rgba(183, 94, 64, 0.70);
+
 }
 
 /* Mobile — screens less than 768px */

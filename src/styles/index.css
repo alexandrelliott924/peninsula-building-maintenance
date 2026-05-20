@@ -27,6 +27,14 @@ p {
   color: #4a4a4a;
 }
 
+a {
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: 500;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
