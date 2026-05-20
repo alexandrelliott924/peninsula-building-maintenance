@@ -6,6 +6,7 @@ import Contact from'./contact';
 import Footer from './footer';
 import {Routes, Route, Navigate} from 'react-router-dom';
 import SkilledMaintenance from './skilledWorkers';
+import TradeAssitant from './TradeAssitant';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/index" element={<Navigate to="/home" replace />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/skilled-maintenance" element={<SkilledMaintenance/>} />
+        <Route path="/careers/ta-cleaner" element={<TradeAssitant/>} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
