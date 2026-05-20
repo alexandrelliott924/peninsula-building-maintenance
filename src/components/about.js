@@ -25,7 +25,7 @@ function About() {
                     fleet in the Pilbara.
                 </p>
                 <div className='jump-flex'>
-                    <div className='jump-flex-layout' id='contact-flex-layout'>
+                    <div className='jump-flex-layout-left' id='contact-flex-layout'>
                         <div>
                             <h2 className='jump-flex-title'>Get a quote</h2>
                             <p className='jump-flex-text'>See what we can do for you</p>
@@ -34,7 +34,7 @@ function About() {
                             <NavLink  to='/get-quote'>Our services<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
-                    <div className='jump-flex-layout' id='careers-flex-layout' >
+                    <div className='jump-flex-layout-right' id='careers-flex-layout' >
                         <div>
                             <h2 className='jump-flex-title'>Careers</h2>
                             <p className='jump-flex-text'>Join the PBM team in the Pilbara</p>

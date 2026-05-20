@@ -33,7 +33,7 @@ function Home() {
                     with government and private sector clients.
                 </p>
                 <div className='jump-flex'>
-                    <div className='jump-flex-layout' id='about-flex-layout' >
+                    <div className='jump-flex-layout-left' id='about-flex-layout' >
                         <div>
                             <h2 className='jump-flex-title'>About us</h2>
                             <p className='jump-flex-text'>Learn more about our commitment to excellence</p>
@@ -42,7 +42,7 @@ function Home() {
                             <NavLink to='/about-us'>Who we are<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
-                    <div className='jump-flex-layout' id='contact-flex-layout'>
+                    <div className='jump-flex-layout-right' id='contact-flex-layout'>
                         <div>
                             <h2 className='jump-flex-title'>Get a quote</h2>
                             <p className='jump-flex-text'>See what we can do for you</p>

@@ -37,7 +37,7 @@ function Careers() {
                     while delivering reliable and professional services to our clients.
                 </p>
                 <div className='jump-flex'>
-                    <div className='jump-flex-layout' id='skilled-worker-flex-layout' >
+                    <div className='jump-flex-layout-left' id='skilled-worker-flex-layout' >
                         <div>
                             <h2 className='jump-flex-title'>Skilled maintenance</h2>
                             <p className='jump-flex-text'>Join PBM as a carpenter</p>
@@ -46,7 +46,7 @@ function Careers() {
                             <NavLink to='/careers/skilled-maintenance'>View offers<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
-                    <div className='jump-flex-layout' id='TA-flex-layout'>
+                    <div className='jump-flex-layout-right' id='TA-flex-layout'>
                         <div>
                             <h2 className='jump-flex-title'>Trade assistant</h2>
                             <p className='jump-flex-text'>Join PBM as a commercial cleaner</p>
@@ -55,7 +55,7 @@ function Careers() {
                             <NavLink  to='/careers/ta-cleaner'>View offers<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
-                    <div className='jump-flex-layout' id='karratha-flex-layout'>
+                    <div className='jump-flex-layout-right' id='karratha-flex-layout'>
                         <div>
                             <h2 className='jump-flex-title'>Living in Karratha</h2>
                             <p className='jump-flex-text'>See what life is like in the Pilbara</p>
