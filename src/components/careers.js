@@ -43,7 +43,7 @@ function Careers() {
                             <p className='jump-flex-text'>Join PBM as a carpenter</p>
                         </div>
                         <button className='jump-button' id='skilled-worker-jump-button'>
-                            <NavLink to='/careers/skilled-maintenace'>View offers<span className='arrow-right'>▶</span></NavLink>
+                            <NavLink to='/careers/skilled-maintenance'>View offers<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
                     <div className='jump-flex-layout' id='TA-flex-layout'>

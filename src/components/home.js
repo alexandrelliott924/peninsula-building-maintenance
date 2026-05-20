@@ -5,13 +5,13 @@ import buildingRow from "../assets/home/Building-row.jpeg";
 import buildingFront from "../assets/home/Building-front.jpeg";
 import buildingInside from "../assets/home/Building-inside.jpeg";
 import forklift from "../assets/home/Forklift.jpeg";
-import '../styles/home.css'
+import '../styles/jumpButtons.css'
 
 
 function Home() {
     const homePhotos = [
         { src: buildingRow, alt:"Coates buildings"},
-        { src: buildingFront, alt:"An ugly building"},
+        { src: buildingFront, alt:"A portable building"},
         { src: buildingInside, alt: "Packed building"},
         { src: forklift, alt: "Mila on a forklift"}
     ];
