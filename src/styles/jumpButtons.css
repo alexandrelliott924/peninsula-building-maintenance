@@ -6,7 +6,7 @@
     margin: 3em auto;
 }
 
-.jump-flex-layout {
+.jump-flex-layout-left {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
@@ -16,6 +16,21 @@
     width: 44%;
     border-radius: 20px;
     padding: 1em 2em;
+    background-color: hsla(206, 55%, 68%, 0.304);
+    color: #1a2e52;
+}
+
+.jump-flex-layout-right {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    width: 44%;
+    border-radius: 20px;
+    padding: 1em 2em;
+    background-color:hsla(41, 64%, 78%, 0.304);
     color: #1a2e52;
 }
 
@@ -50,28 +65,8 @@
     left: 0.5em
 }
 
-#about-flex-layout {
-    background-color: hsla(206, 55%, 68%, 0.304);
-}
-
-#contact-flex-layout {
-    background-color:hsla(41, 64%, 78%, 0.304);
-}
-
-#careers-flex-layout {
-    background-color: rgba(183, 94, 64, 0.6);
-}
-
-#skilled-worker-flex-layout {
-    background-color: hsla(206, 55%, 68%, 0.304);
-}
-
-#TA-flex-layout {
-    background-color:hsla(41, 64%, 78%, 0.304);
-}
-
 #karratha-flex-layout {
-    background-color: rgba(183, 94, 64, 0.70);
+    background-color: rgba(183, 94, 64, 0.50);
 
 }
 
