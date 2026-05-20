@@ -5,6 +5,9 @@ function Careers() {
     return (
         <div>
             
+            <Content title="">
+                <p></p>
+            </Content>
         </div>
     )
 }

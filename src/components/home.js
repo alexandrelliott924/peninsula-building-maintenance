@@ -4,7 +4,6 @@ import Content from './content';
 import buildingRow from "../assets/home/Building-row.jpeg";
 import buildingFront from "../assets/home/Building-front.jpeg";
 import buildingInside from "../assets/home/Building-inside.jpeg";
-import airconsLandscape from "../assets/home/Aircons-landscape.jpeg";
 import forklift from "../assets/home/Forklift.jpeg";
 import '../styles/home.css'
 
@@ -14,7 +13,6 @@ function Home() {
         { src: buildingRow, alt:"Coates buildings"},
         { src: buildingFront, alt:"An ugly building"},
         { src: buildingInside, alt: "Packed building"},
-        { src: airconsLandscape, alt: "Look at this yard!"},
         { src: forklift, alt: "Mila on a forklift"}
     ];
     return (
@@ -25,7 +23,7 @@ function Home() {
                     Peninsula Building Maintenance is committed to delivering safe, efficient, 
                     and high-quality building repair and maintenance services across regional Western 
                     Australia. We specialise in the maintenance and refurbishment of portable and modular
-                     infrastructure, ensuring assets remain compliant, functional, and fit for purpose. 
+                    infrastructure, ensuring assets remain compliant, functional, and fit for purpose. 
                 </p>
                 <p>
                     Through strong governance, skilled tradespeople, and a focus on safety, quality 
@@ -35,22 +33,22 @@ function Home() {
                     with government and private sector clients.
                 </p>
                 <div className='jump-flex'>
-                    <div className='jump-flex-layout' id='careers-flex-layout' >
+                    <div className='jump-flex-layout' id='about-flex-layout' >
                         <div>
-                            <h2 className='jump-flex-title'>Careers</h2>
-                            <p className='jump-flex-text'>Join the PBM team in the Pilbara</p>
+                            <h2 className='jump-flex-title'>About us</h2>
+                            <p className='jump-flex-text'>Learn more about our commitment to excellence</p>
                         </div>
-                        <button className='jump-button' id='careers-jump-button'>
-                            <NavLink to='/careers'>View roles <span className='arrow-right'>▶</span></NavLink>
+                        <button className='jump-button' id='about-jump-button'>
+                            <NavLink to='/about-us'>Who we are<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
                     <div className='jump-flex-layout' id='contact-flex-layout'>
                         <div>
                             <h2 className='jump-flex-title'>Get a quote</h2>
-                            <p className='jump-flex-text'>Talk to us about your project</p>
+                            <p className='jump-flex-text'>See what we can do for you</p>
                         </div>
                         <button className='jump-button' id='contact-jump-button'>
-                            <NavLink  to='/contact'>Contact us <span className='arrow-right'>▶</span></NavLink>
+                            <NavLink  to='/get-quote'>Our services<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
                 </div>

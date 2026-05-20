@@ -26,6 +26,7 @@ function Nav() {
       </button>
       <ul className={`main-nav ${menuOpen ? 'open' : ''}`}>
         <li><NavLink to="/home">Home</NavLink></li>
+        <li><NavLink to="/get-quote">Get a quote</NavLink></li>
         <li className="dropdown-wrapper">
           <NavLink to="/careers">
             Careers <span className="chevron">▾</span>
@@ -41,7 +42,7 @@ function Nav() {
             <Link to="/careers/life-in-karratha">Life in Karratha</Link>
           </div>
         </li>
-        <li><NavLink to="/about">About us</NavLink></li>
+        <li><NavLink to="/about-us">About us</NavLink></li>
         <li><NavLink to="/contact">Contact</NavLink></li>
       </ul>
     </div>

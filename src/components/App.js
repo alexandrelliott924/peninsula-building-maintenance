@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/index" element={<Navigate to="/home" replace />} />
         <Route path="/careers" element={<Careers />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

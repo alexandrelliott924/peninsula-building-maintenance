@@ -20,7 +20,7 @@ a {
     align-items: center;
     gap: 1em;
 
-    width: 42%;
+    width: 44%;
     border-radius: 20px;
     padding: 1em 2em;
     color: #1a2e52;
@@ -57,12 +57,16 @@ a {
     left: 0.5em
 }
 
-#careers-flex-layout {
+#about-flex-layout {
     background-color: hsla(206, 55%, 68%, 0.304);
 }
 
 #contact-flex-layout {
     background-color:hsla(41, 64%, 78%, 0.304);
+}
+
+#careers-flex-layout {
+    background-color: hsla(206, 55%, 68%, 0.304);
 }
 
 /* Mobile — screens less than 768px */
