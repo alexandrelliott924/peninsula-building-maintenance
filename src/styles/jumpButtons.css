@@ -71,6 +71,10 @@
 
 }
 
+#contact-flex-layout {
+  width: 60%;
+}
+
 /* Mobile — screens less than 768px */
 @media (max-width: 768px) {
   .jump-flex {
@@ -100,6 +104,10 @@
   .jump-button {
     width: 100%;
     padding: 0.8em 1.5em;
+  }
+
+  #contact-flex-layout {
+    width: 100%;
   }
 
   .jump-flex-title {

@@ -1,8 +1,8 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
+import buildingSunset from "../assets/home/buildings-sunset.jpg"
 import buildingRow from "../assets/home/Building-row.jpeg";
-import buildingFront from "../assets/home/Building-front.jpeg";
 import buildingInside from "../assets/home/Building-inside.jpeg";
 import forklift from "../assets/home/Forklift.jpeg";
 import '../styles/jumpButtons.css'
@@ -10,8 +10,8 @@ import '../styles/jumpButtons.css'
 
 function Home() {
     const homePhotos = [
+        { src: buildingSunset, alt:"Beautiful sunset over portable buildings"},
         { src: buildingRow, alt:"Coates buildings"},
-        { src: buildingFront, alt:"A portable building"},
         { src: buildingInside, alt: "Packed building"},
         { src: forklift, alt: "Mila on a forklift"}
     ];
@@ -42,12 +42,12 @@ function Home() {
                             <NavLink to='/about-us'>Who we are<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
-                    <div className='jump-flex-layout-right' id='contact-flex-layout'>
+                    <div className='jump-flex-layout-right'>
                         <div>
                             <h2 className='jump-flex-title'>Get a quote</h2>
                             <p className='jump-flex-text'>See what we can do for you</p>
                         </div>
-                        <button className='jump-button' id='contact-jump-button'>
+                        <button className='jump-button'>
                             <NavLink  to='/get-quote'>Our services<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>

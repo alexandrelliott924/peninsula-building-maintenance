@@ -1,0 +1,79 @@
+/* Quote Grid Layout */
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 0.4em 0 3rem 0;
+}
+
+/* Styling for each quote list */
+.quote-grid ul {
+    list-style: none;
+    padding: 1.5rem 0;
+    color: #1a2e52;
+}
+
+/* Category titles inside ul */
+.quote-category-title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a2e52;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #1a2e52;
+}
+
+/* Individual list items */
+.quote-item {
+    padding: 0.75rem 0;
+    color: #1a2e52;
+    border-bottom: 1px solid rgba(26, 46, 82, 0.15);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    font-weight: 200;
+}
+
+.quote-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+    .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .quote-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .quote-grid-title {
+        font-size: 1.8rem;
+        margin: 2rem 0 1.5rem 0;
+    }
+
+    .quote-grid ul {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .quote-category-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .quote-item {
+        font-size: 0.9rem;
+        padding: 0.6rem 0;
+    }
+
+    /* Ensure jump button takes full width on mobile */
+    .jump-button {
+        width: 100% !important;
+    }
+}

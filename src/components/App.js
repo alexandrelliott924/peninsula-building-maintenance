@@ -1,5 +1,6 @@
 import Header from'./header';
 import Home from './home';
+import GetQuote from './getQuote';
 import Careers from'./careers';
 import About from'./about';
 import Contact from'./contact';
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Navigate to="/home" replace />} />
         <Route path="/index" element={<Navigate to="/home" replace />} />
+        <Route path="/get-quote" element={<GetQuote />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/skilled-maintenance" element={<SkilledMaintenance/>} />
         <Route path="/careers/ta-cleaner" element={<TradeAssitant/>} />

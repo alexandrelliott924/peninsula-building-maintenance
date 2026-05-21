@@ -25,7 +25,7 @@ function About() {
                     fleet in the Pilbara.
                 </p>
                 <div className='jump-flex'>
-                    <div className='jump-flex-layout-left' id='contact-flex-layout'>
+                    <div className='jump-flex-layout-left'>
                         <div>
                             <h2 className='jump-flex-title'>Get a quote</h2>
                             <p className='jump-flex-text'>See what we can do for you</p>
