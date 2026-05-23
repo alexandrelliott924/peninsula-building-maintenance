@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Photos from './photos';
 import Content from './content';
 import '../styles/contact.css';
 
