@@ -120,6 +120,22 @@
     line-height: 1.6;
 }
 
+/* Center title on Contact page only */
+.contact-page .content-title {
+    text-align: center;
+}
+
+#contact-page-title {
+    display: block;
+    text-align: middle;
+    padding: 0.4em 0 0 2em;
+    margin-top: 0.4em;
+    margin-bottom: 1em;
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a2e52;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .contact-form {

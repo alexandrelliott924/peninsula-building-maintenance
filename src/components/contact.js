@@ -89,7 +89,7 @@ function Contact() {
     }
 
     return (
-        <div>
+        <div className="contact-page">
             <Content title="Contact us">
                 <form className="contact-form" onSubmit={handleSubmit}>
                     <div className="form-group">
