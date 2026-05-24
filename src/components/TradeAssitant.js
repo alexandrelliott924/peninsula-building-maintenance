@@ -5,7 +5,7 @@ import "../styles/job_offer.css";
 function TradeAssitant() {
 
     return(
-        <Content title="Trade assistant role description">
+        <Content title="Trade assistant / Commercial cleaner role description">
             <h2 className='job-section-title'>Responsibilities:</h2>
             <p className='job-section-text'>
                 <ul className='job-list'>
@@ -21,7 +21,8 @@ function TradeAssitant() {
             <h2 className='job-section-title'>Requirements:</h2>
             <p className='job-section-text'>
                 <ul className='job-list'>
-                    <li className='job-list-item'>Forklift licence</li>
+                    <li className='job-list-item'>Commercial cleaning experience (preferred)</li>
+                    <li className='job-list-item'>Forklift licence (preferred)</li>
                     <li className='job-list-item'>Test and Tag (preferred)</li>
                     <li className='job-list-item'>Construction experience (preferred)</li>
                     <li className='job-list-item'>Rights to work in Australia</li>
