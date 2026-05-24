@@ -48,7 +48,7 @@ function GetQuote() {
                             <p className='jump-flex-text'>Tell us about your project</p>
                         </div>
                         <button className='jump-button' id='contact-jump-button'>
-                            <NavLink  to='/contact'>Contact us<span className='arrow-right'>▶</span></NavLink>
+                            <NavLink to='/contact' state={{ subject: 'Get a quote' }}>Contact us<span className='arrow-right'>▶</span></NavLink>
                         </button>
                     </div>
                 </div>

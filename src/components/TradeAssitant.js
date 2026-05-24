@@ -39,7 +39,7 @@ function TradeAssitant() {
                     <NavLink to="/careers" id='back-button-nav'>Back to Careers page</NavLink>
                 </button>
                 <button className='job-jump-button' id='apply-button'>
-                    <NavLink to="/contact" id='apply-button-nav'>Apply for this job</NavLink>
+                    <NavLink to="/contact" state={{ subject: 'Trade assistant application' }} id='apply-button-nav'>Apply for this job</NavLink>
                 </button>
             </div>
         </Content>

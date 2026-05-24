@@ -24,7 +24,7 @@
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) {
     .carousel-container {
         height: 250px;
     }

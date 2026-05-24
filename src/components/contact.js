@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Content from './content';
 import '../styles/contact.css';
 
 function Contact() {
     const navigate = useNavigate();
+    const location = useLocation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -14,6 +15,16 @@ function Contact() {
     });
     const [errors, setErrors] = useState({});
     const [submitted, setSubmitted] = useState(false);
+
+    // Pre-fill subject if passed from another page
+    useEffect(() => {
+        if (location.state?.subject) {
+            setFormData((prev) => ({
+                ...prev,
+                subject: location.state.subject
+            }));
+        }
+    }, [location]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

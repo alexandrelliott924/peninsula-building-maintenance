@@ -47,8 +47,10 @@
     transition: transform 0.3s ease;
 }
 
-.jump-button:hover {
-    transform: scale(1.1);
+@media (hover: hover) {
+    .jump-button:hover {
+        transform: scale(1.1);
+    }
 }
 
 .jump-flex-title {
@@ -76,7 +78,7 @@
 }
 
 /* Mobile — screens less than 768px */
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) {
   .jump-flex {
     flex-flow: column;
     gap: 2em;

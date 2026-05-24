@@ -82,9 +82,11 @@
     display: block;
 }
 
-.form-button:hover {
-    transform: scale(1.05);
-    background-color: #142240;
+@media (hover: hover) {
+    .form-button:hover {
+        transform: scale(1.05);
+        background-color: #142240;
+    }
 }
 
 .form-button:active {
@@ -137,7 +139,7 @@
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 768px), (hover: none) {
     .contact-form {
         padding: 1.5em;
         margin: 1em auto;
