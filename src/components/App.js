@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from'./header';
 import Home from './home';
 import GetQuote from './getQuote';
@@ -10,6 +12,13 @@ import SkilledMaintenance from './skilledWorkers';
 import TradeAssitant from './TradeAssitant';
 
 function App() {
+  const location = useLocation();
+
+  //User brought to top of newly opened page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div>
       <Header />

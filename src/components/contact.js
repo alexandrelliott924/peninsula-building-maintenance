@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Content from './content';
 import '../styles/contact.css';
+import icon from '../assets/logos/PBM-icon.png';
 
 function Contact() {
     const navigate = useNavigate();
@@ -92,6 +93,7 @@ function Contact() {
             <div className="contact-success-page">
                 <div className="success-message-container">
                     <h1 className="success-title">Message sent successfully, thank you!</h1>
+                    <img className='contact-page-pbm-logo' src={icon} alt="PBM icon" />
                     <p className="success-subtitle">Redirecting to home page...</p>
                 </div>
             </div>

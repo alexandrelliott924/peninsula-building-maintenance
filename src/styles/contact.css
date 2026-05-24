@@ -127,6 +127,13 @@
     text-align: center;
 }
 
+.contact-page-pbm-logo {
+    display: block;
+    margin: 1em auto;
+    width: 30%;
+    height: auto;
+}
+
 #contact-page-title {
     display: block;
     text-align: middle;
