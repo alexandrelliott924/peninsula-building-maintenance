@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { SuccessPageContext } from '../SuccessPageContext';
 import Content from './content';
 import '../styles/contact.css';
 import icon from '../assets/logos/PBM-icon.png';
@@ -7,6 +8,7 @@ import icon from '../assets/logos/PBM-icon.png';
 function Contact() {
     const navigate = useNavigate();
     const location = useLocation();
+    const { setShowSuccessPage } = useContext(SuccessPageContext);
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -81,9 +83,11 @@ function Contact() {
 
         // Form is valid - show success message
         setSubmitted(true);
+        setShowSuccessPage(true);
 
         // Redirect to home after 5 seconds
         setTimeout(() => {
+            setShowSuccessPage(false);
             navigate('/');
         }, 5000);
     };

@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SuccessPageContext } from '../SuccessPageContext';
 import Header from'./header';
 import Home from './home';
 import GetQuote from './getQuote';
@@ -13,6 +14,7 @@ import TradeAssitant from './TradeAssitant';
 
 function App() {
   const location = useLocation();
+  const { showSuccessPage } = useContext(SuccessPageContext);
 
   //User brought to top of newly opened page
   useEffect(() => {
@@ -21,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      {!showSuccessPage && <Header />}
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/" element={<Navigate to="/home" replace />} />
@@ -33,7 +35,7 @@ function App() {
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      {!showSuccessPage && <Footer />}
     </div>
   );
 }
