@@ -51,6 +51,7 @@
     .quote-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        margin-top: 2.5em;
     }
 
     .quote-grid-title {
@@ -59,7 +60,7 @@
     }
 
     .quote-grid ul {
-        padding: 1.5rem 1.25rem;
+        padding: 1rem 1.25rem;
     }
 
     .quote-category-title {
