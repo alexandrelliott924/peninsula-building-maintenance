@@ -94,6 +94,15 @@
 
 /* Mobile responsiveness */
 @media (max-width: 768px), (hover: none) {
+    .apply-jobs-flex {
+        flex-flow: column;
+        gap: 1em;
+    }
+
+    .job-jump-button {
+        width: 100%;
+        min-width: auto;
+    }
     .job-section-title {
         font-size: 1.2em;
         margin-top: 1.5em;
