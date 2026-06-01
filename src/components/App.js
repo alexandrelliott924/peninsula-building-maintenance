@@ -11,6 +11,7 @@ import Footer from './footer';
 import {Routes, Route, Navigate} from 'react-router-dom';
 import SkilledMaintenance from './skilledWorkers';
 import TradeAssitant from './TradeAssitant';
+import LifeInKarratha from './lifeInKarratha';
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/skilled-maintenance" element={<SkilledMaintenance/>} />
         <Route path="/careers/ta-cleaner" element={<TradeAssitant/>} />
+        <Route path="/careers/life-in-karratha" element={<LifeInKarratha/>} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
