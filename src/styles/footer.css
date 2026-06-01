@@ -28,6 +28,19 @@
     right: 0.4em;
 }
 
+.phone-link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px), (hover: none) {
+    .phone-link {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 768px), (hover: none) {
     .footer {
         flex-flow: column;
