@@ -31,17 +31,30 @@
 .phone-link {
     color: white;
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
+    font-size: 1em;
+    pointer-events: none;
+}
+
+.email-link {
+    color: white;
+    text-decoration: none;
+    cursor: default;
+    font-size: 1em;
+    pointer-events: none;
 }
 
 @media (max-width: 768px), (hover: none) {
     .phone-link {
-        text-decoration: underline;
         cursor: pointer;
+        pointer-events: auto;
     }
-}
 
-@media (max-width: 768px), (hover: none) {
+    .email-link {
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
     .footer {
         flex-flow: column;
         height: auto;
