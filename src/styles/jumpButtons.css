@@ -38,13 +38,22 @@
 .jump-button {
     text-decoration: none;
     border-radius: 25px;
-    padding: 0.6em 1em;
+    padding: 0;
     color: white;
     background-color: #1a2e52;
     border-width: 0;
     width: 32%;
     min-width: 7em;
     transition: transform 0.3s ease;
+}
+
+.jump-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.6em 1em;
+    color: white;
+    text-decoration: none;
 }
 
 @media (hover: hover) {
@@ -105,12 +114,17 @@
 
   .jump-button {
     width: 100%;
-    padding: 0.8em 1.5em;
+    padding: 0;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
     -webkit-appearance: none;
     touch-action: manipulation;
+  }
+
+  .jump-button a {
+    display: block;
+    padding: 0.8em 1.5em;
   }
 
   .jump-button:active {

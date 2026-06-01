@@ -51,13 +51,20 @@
 .job-jump-button {
     text-decoration: none;
     border-radius: 25px;
-    padding: 0.6em 1em;
-    
+    padding: 0;
     border-width: 0;
     width: 32%;
     min-width: 7em;
-
     transition: transform 0.3s ease;
+}
+
+.job-jump-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0.6em 1em;
+    color: white;
+    text-decoration: none;
 }
 
 @media (hover: hover) {
@@ -113,5 +120,13 @@
 
     .job-list-item::before {
         font-size: 0.8em;
+    }
+
+    .job-jump-button {
+        width: 100%;
+    }
+
+    .job-jump-button a {
+        padding: 0.8em 1.5em;
     }
 }
