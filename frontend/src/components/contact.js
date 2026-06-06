@@ -87,7 +87,7 @@ function Contact() {
 
         try {
             //Send data to backend
-            const response = await fetch('http://https://peninsula-building-maintenance.onrender.com/api/contact', {
+            const response = await fetch('https://peninsula-building-maintenance.onrender.com/api/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
