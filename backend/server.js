@@ -17,10 +17,14 @@ app.use(express.json());
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
+    console.log('📧 /api/contact endpoint called');
+    console.log('Request body:', { name: req.body.name, email: req.body.email, phone: req.body.phone, subject: req.body.subject });
+
     const { name, email, phone, subject, message } = req.body;
 
     // Validate all fields
     if (!name || !email || !phone || !subject || !message) {
+      console.log('❌ Validation failed - missing fields');
       return res.status(400).json({
         success: false,
         error: 'All fields are required'
@@ -61,8 +65,15 @@ app.post('/api/contact', async (req, res) => {
     };
 
     // Send both emails
+    console.log('📤 Attempting to send emails via SendGrid...');
+    console.log('Admin email recipient:', process.env.ADMIN_EMAIL);
+    console.log('User email recipient:', email);
+
     await sgMail.send(adminMsg);
+    console.log('✅ Admin email sent successfully');
+
     await sgMail.send(userMsg);
+    console.log('✅ User confirmation email sent successfully');
 
     res.json({
       success: true,
@@ -70,7 +81,8 @@ app.post('/api/contact', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Email error:', error);
+    console.error('❌ Email error caught:', error.message);
+    console.error('Error details:', error);
     res.status(500).json({
       success: false,
       error: 'Failed to send email. Please try again later.'
@@ -86,5 +98,7 @@ app.get('/api/health', (req, res) => {
 // Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Backend server running on port ${PORT}`);
+  console.log(`🚀 Backend server running on port ${PORT}`);
+  console.log(`📧 SendGrid API Key configured: ${process.env.SENDGRID_API_KEY ? '✅ Yes' : '❌ No'}`);
+  console.log(`📬 Admin email: ${process.env.ADMIN_EMAIL}`);
 });
