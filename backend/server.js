@@ -9,7 +9,15 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://peninsula-building-maintenance-gnhc-pzl89beam.vercel.app',
+    'https://peninsula-bm.com.au',
+    'http://localhost:3000'
+  ],
+  methods: ['POST', 'GET'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Configure Nodemailer transporter
