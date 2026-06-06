@@ -1,0 +1,180 @@
+/* nav.css */
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0 -5%;
+  padding: 0;
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #1a2e52;
+  text-decoration: none;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+@media (hover: hover) {
+  .main-nav a:hover {
+    background: rgba(26, 46, 82, 0.08);
+  }
+}
+
+.main-nav a.active {
+  background: rgba(26, 46, 82, 0.12);
+  font-weight: 500;
+}
+
+/* Careers dropdown */
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-wrapper .chevron {
+  font-size: 11px;
+  opacity: 0.6;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+@media (hover: hover) {
+  .dropdown-wrapper:hover .chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #ffffff;
+  border: 0.5px solid #d8d6cc;
+  border-radius: 8px;
+  padding: 6px;
+  min-width: 200px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+@media (hover: hover) {
+  .dropdown-wrapper:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.dropdown a {
+  display: block;
+  padding: 9px 12px;
+  font-size: 13px;
+  color: #1a2e52;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+@media (hover: hover) {
+  .dropdown a:hover {
+    background: #eef2f8;
+  }
+}
+
+.dropdown-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #8a8880;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 6px 12px 2px;
+}
+
+.dropdown-divider {
+  height: 0.5px;
+  background: #e4e2d8;
+  margin: 4px 6px;
+}
+
+/* Mobile — hamburger toggle */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #1a2e52;
+  font-size: 22px;
+}
+
+@media (max-width: 768px), (hover: none) {
+  .nav-toggle {
+    display: block;
+    font-size: 200%;
+    padding: 1em;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    position: absolute;
+    top: 85px;
+    left: 0;
+    right: 0;
+    background: #f2f2f0;
+    border-bottom: 1px solid #d8d6cc;
+    padding: 8px 16px 16px;
+    z-index: 200;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav a {
+    width: 100%;
+    padding: 12px 8px;
+    border-radius: 0;
+    border-bottom: 0.5px solid #e4e2d8;
+  }
+
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 0 16px;
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease, visibility 0.5s;
+  }
+
+  .chevron {
+    visibility: hidden;
+  }
+
+  li {
+    width: 100%;
+    font-family: 'Lexend', 'Montserrat', sans-serif;
+    margin-left: 0;
+    padding-left: 3%;
+  }
+}
