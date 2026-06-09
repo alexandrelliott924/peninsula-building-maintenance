@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const sgMail = require('@sendgrid/mail');
+const SibApiV3Sdk = require('sib-api-v3-sdk');
 
 dotenv.config();
 
-// Set SendGrid API key
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+// Configure Brevo API
+const client = new SibApiV3Sdk.ApiClient();
+client.authentications['api-key'].apiKey = process.env.BREVO_API_KEY;
+const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
 const app = express();
 
@@ -32,47 +34,45 @@ app.post('/api/contact', async (req, res) => {
     }
 
     // Email to admin
-    const adminMsg = {
-      to: process.env.ADMIN_EMAIL,
-      from: process.env.EMAIL_USER,
-      subject: `New Contact Form: ${subject}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `
-    };
+    const adminMsg = new SibApiV3Sdk.SendSmtpEmail();
+    adminMsg.to = [{ email: process.env.ADMIN_EMAIL }];
+    adminMsg.from = { email: process.env.EMAIL_USER };
+    adminMsg.subject = `New Contact Form: ${subject}`;
+    adminMsg.htmlContent = `
+      <h2>New Contact Form Submission</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+    `;
 
     // Confirmation email to user
-    const userMsg = {
-      to: email,
-      from: process.env.EMAIL_USER,
-      subject: 'Thank you for contacting PBM',
-      html: `
-        <h2>Thank you for contacting Peninsula Building Maintenance</h2>
-        <p>Hi ${name},</p>
-        <p>We received your message and will get back to you soon.</p>
-        <p><strong>Your message details:</strong></p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-        <p>Best regards,<br>Peninsula Building Maintenance Team</p>
-      `
-    };
+    const userMsg = new SibApiV3Sdk.SendSmtpEmail();
+    userMsg.to = [{ email: email }];
+    userMsg.from = { email: process.env.EMAIL_USER };
+    userMsg.subject = 'Thank you for contacting PBM';
+    userMsg.htmlContent = `
+      <h2>Thank you for contacting Peninsula Building Maintenance</h2>
+      <p>Hi ${name},</p>
+      <p>We received your message and will get back to you soon.</p>
+      <p><strong>Your message details:</strong></p>
+      <p><strong>Subject:</strong> ${subject}</p>
+      <p><strong>Message:</strong></p>
+      <p>${message.replace(/\n/g, '<br>')}</p>
+      <p>Best regards,<br>Peninsula Building Maintenance Team</p>
+    `;
 
     // Send both emails
-    console.log('📤 Attempting to send emails via SendGrid...');
+    console.log('📤 Attempting to send emails via Brevo...');
     console.log('Admin email recipient:', process.env.ADMIN_EMAIL);
     console.log('User email recipient:', email);
 
-    await sgMail.send(adminMsg);
+    await apiInstance.sendTransacEmail(adminMsg);
     console.log('✅ Admin email sent successfully');
 
-    await sgMail.send(userMsg);
+    await apiInstance.sendTransacEmail(userMsg);
     console.log('✅ User confirmation email sent successfully');
 
     res.json({
@@ -99,6 +99,6 @@ app.get('/api/health', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Backend server running on port ${PORT}`);
-  console.log(`📧 SendGrid API Key configured: ${process.env.SENDGRID_API_KEY ? '✅ Yes' : '❌ No'}`);
+  console.log(`📧 Brevo API Key configured: ${process.env.BREVO_API_KEY ? '✅ Yes' : '❌ No'}`);
   console.log(`📬 Admin email: ${process.env.ADMIN_EMAIL}`);
 });
