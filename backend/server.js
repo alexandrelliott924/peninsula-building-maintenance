@@ -1,18 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const nodemailer = require('nodemailer');
+const sgMail = require('@sendgrid/mail');
 
 dotenv.config();
 
-// Create Nodemailer transporter for Gmail
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+// Set SendGrid API key
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const app = express();
 
@@ -71,14 +65,14 @@ app.post('/api/contact', async (req, res) => {
     };
 
     // Send both emails
-    console.log('📤 Attempting to send emails via Nodemailer/Gmail...');
+    console.log('📤 Attempting to send emails via SendGrid...');
     console.log('Admin email recipient:', process.env.ADMIN_EMAIL);
     console.log('User email recipient:', email);
 
-    await transporter.sendMail(adminMsg);
+    await sgMail.send(adminMsg);
     console.log('✅ Admin email sent successfully');
 
-    await transporter.sendMail(userMsg);
+    await sgMail.send(userMsg);
     console.log('✅ User confirmation email sent successfully');
 
     res.json({
@@ -105,6 +99,6 @@ app.get('/api/health', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Backend server running on port ${PORT}`);
-  console.log(`📧 Gmail credentials configured: ${process.env.EMAIL_USER ? '✅ Yes' : '❌ No'}`);
+  console.log(`📧 SendGrid API Key configured: ${process.env.SENDGRID_API_KEY ? '✅ Yes' : '❌ No'}`);
   console.log(`📬 Admin email: ${process.env.ADMIN_EMAIL}`);
 });
