@@ -35,13 +35,13 @@ app.post('/api/contact', async (req, res) => {
     // Email signature with logo and company details
     const emailSignature = `
       <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-      <div style="display: flex; gap: 15px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999; line-height: 1.6;">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999; line-height: 1.6;">
         <!-- Logo -->
-        <div style="flex-shrink: 0;">
-          <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/main/src/assets/logos/PBM-logo.png?raw=true" alt="Peninsula Building Maintenance" style="max-width: 110px; height: auto;">
+        <div style="text-align: left;">
+          <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/main/src/assets/logos/PBM-logo.png?raw=true" alt="Peninsula Building Maintenance" style="width: 50%; height: auto; max-width: 220px;">
         </div>
         <!-- Company Details -->
-        <div style="flex: 1;">
+        <div style="text-align: left;">
           <p style="margin: 0 0 2px 0; font-weight: normal; color: #999; font-size: 12px;">Peninsula Building Maintenance Pty Ltd</p>
           <p style="margin: 0 0 2px 0; font-size: 12px;">80 Radley Drive, Baynton, WA6714</p>
           <p style="margin: 0 0 2px 0; font-size: 12px;">p. 0401 443 548</p>
@@ -74,14 +74,13 @@ app.post('/api/contact', async (req, res) => {
     userMsg.sender = { email: process.env.EMAIL_USER, name: 'Peninsula Building Maintenance' };
     userMsg.subject = 'Thank you for contacting PBM';
     userMsg.htmlContent = `
-      <h2>Thank you for contacting Peninsula Building Maintenance</h2>
       <p>Hi ${name},</p>
       <p>We received your message and will get back to you soon.</p>
       <p><strong>Your message details:</strong></p>
       <p><strong>Subject:</strong> ${subject}</p>
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
-      <p>Best regards,<br>Peninsula Building Maintenance Team</p>
+      <p>Best regards,<br></p>
       ${emailSignature}
     `;
 
