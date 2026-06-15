@@ -32,6 +32,26 @@ app.post('/api/contact', async (req, res) => {
       });
     }
 
+    // Email signature with logo and company details
+    const emailSignature = `
+      <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+      <div style="display: flex; gap: 15px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999; line-height: 1.6;">
+        <!-- Logo -->
+        <div style="flex-shrink: 0;">
+          <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/main/src/assets/logos/PBM-logo.png?raw=true" alt="Peninsula Building Maintenance" style="max-width: 110px; height: auto;">
+        </div>
+        <!-- Company Details -->
+        <div style="flex: 1;">
+          <p style="margin: 0 0 2px 0; font-weight: normal; color: #999; font-size: 12px;">Peninsula Building Maintenance Pty Ltd</p>
+          <p style="margin: 0 0 2px 0; font-size: 12px;">80 Radley Drive, Baynton, WA6714</p>
+          <p style="margin: 0 0 2px 0; font-size: 12px;">p. 0401 443 548</p>
+          <p style="margin: 0 0 2px 0; font-size: 12px;">e. <a href="mailto:admin@peninsula-bm.com.au" style="color: #d4af37; text-decoration: underline; font-weight: normal;">admin@peninsula-bm.com.au</a></p>
+          <p style="margin: 0 0 2px 0; font-size: 12px;">a.c.n 672 593 252</p>
+          <p style="margin: 0; font-size: 12px;">a.b.n 526 725 932 52</p>
+        </div>
+      </div>
+    `;
+
     // Create Brevo SDK email object for admin
     const adminMsg = new SibApiV3Sdk.SendSmtpEmail();
     adminMsg.to = [{ email: process.env.ADMIN_EMAIL }];
@@ -45,6 +65,7 @@ app.post('/api/contact', async (req, res) => {
       <p><strong>Subject:</strong> ${subject}</p>
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
+      ${emailSignature}
     `;
 
     // Create Brevo SDK email object for user
@@ -61,6 +82,7 @@ app.post('/api/contact', async (req, res) => {
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
       <p>Best regards,<br>Peninsula Building Maintenance Team</p>
+      ${emailSignature}
     `;
 
     // Send both emails
