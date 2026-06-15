@@ -34,7 +34,8 @@ app.post('/api/contact', async (req, res) => {
 
     // Email signature with logo and company details
     const emailSignature = `
-      <div style="margin-top: 20px; margin-bottom: 5px;">
+      <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
+      <div style="margin-top: 5px; margin-bottom: 5px;">
         <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/dev/frontend/src/assets/logos/PBM-logo-white-background.jpeg?raw=true" alt="Peninsula Building Maintenance" style="width: 50%; height: auto; max-width: 220px;">
       </div>
       <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999; line-height: 1.6;">
@@ -76,9 +77,7 @@ app.post('/api/contact', async (req, res) => {
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
       <p>Best regards,</p>
-      <div>
-        ${emailSignature}
-      <div>
+      ${emailSignature}
     `;
 
     // Send both emails
