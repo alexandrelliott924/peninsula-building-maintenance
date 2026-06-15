@@ -76,7 +76,9 @@ app.post('/api/contact', async (req, res) => {
       <p><strong>Message:</strong></p>
       <p>${message.replace(/\n/g, '<br>')}</p>
       <p>Best regards,</p>
-      ${emailSignature}
+      <div>
+        ${emailSignature}
+      <div>
     `;
 
     // Send both emails
