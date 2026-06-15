@@ -18,14 +18,14 @@ app.use(express.json());
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
-    console.log('📧 /api/contact endpoint called');
+    console.log('/api/contact endpoint called');
     console.log('Request body:', { name: req.body.name, email: req.body.email, phone: req.body.phone, subject: req.body.subject });
 
     const { name, email, phone, subject, message } = req.body;
 
     // Validate all fields
     if (!name || !email || !phone || !subject || !message) {
-      console.log('❌ Validation failed - missing fields');
+      console.log('Validation failed - missing fields');
       return res.status(400).json({
         success: false,
         error: 'All fields are required'
@@ -34,8 +34,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Email signature with logo and company details
     const emailSignature = `
-      <hr style="border: none; border-top: 1px solid #ddd; margin: 20px 0;">
-      <div style="margin-bottom: 5px;">
+      <div style="margin-top: 20px; margin-bottom: 5px;">
         <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/dev/frontend/src/assets/logos/PBM-logo-white-background.jpeg?raw=true" alt="Peninsula Building Maintenance" style="width: 50%; height: auto; max-width: 220px;">
       </div>
       <div style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #999; line-height: 1.6;">
@@ -81,17 +80,17 @@ app.post('/api/contact', async (req, res) => {
     `;
 
     // Send both emails
-    console.log('📤 Attempting to send emails via Brevo SDK...');
+    console.log('Attempting to send emails via Brevo SDK...');
     console.log('Admin email recipient:', process.env.ADMIN_EMAIL);
     console.log('User email recipient:', email);
 
     const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
     await apiInstance.sendTransacEmail(adminMsg);
-    console.log('✅ Admin email sent successfully');
+    console.log('Admin email sent successfully');
 
     await apiInstance.sendTransacEmail(userMsg);
-    console.log('✅ User confirmation email sent successfully');
+    console.log('User confirmation email sent successfully');
 
     res.json({
       success: true,
@@ -99,7 +98,7 @@ app.post('/api/contact', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('❌ Email error caught:', error.message);
+    console.error('Email error caught:', error.message);
     console.error('Error details:', error);
     res.status(500).json({
       success: false,
@@ -117,6 +116,6 @@ app.get('/api/health', (req, res) => {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Backend server running on port ${PORT}`);
-  console.log(`📧 Brevo SDK configured: ${process.env.BREVO_API_KEY ? '✅ Yes' : '❌ No'}`);
+  console.log(`📧 Brevo SDK configured: ${process.env.BREVO_API_KEY ? 'Yes' : 'No'}`);
   console.log(`📬 Admin email: ${process.env.ADMIN_EMAIL}`);
 });
