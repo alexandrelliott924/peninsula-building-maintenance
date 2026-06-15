@@ -34,7 +34,7 @@ app.post('/api/contact', async (req, res) => {
 
     // Email signature with logo and company details
     const emailSignature = `
-      <div style="border-top: 1px solid #ddd; margin: 0, 0, 5px 0; font-size: 0; line-height: 0;">&nbsp;</div>
+      <div style="border-top: 1px solid #ddd; margin: 5px 0; font-size: 0; line-height: 0;">&nbsp;</div>
       <div style="margin-top: 5px; margin-bottom: 5px; margin-left: 0px">
         <img src="https://github.com/alexandrelliott924/peninsula-building-maintenance/blob/dev/frontend/src/assets/logos/PBM-logo-white-background.jpeg?raw=true" alt="Peninsula Building Maintenance" style="width: 50%; height: auto; max-width: 220px;">
       </div>
