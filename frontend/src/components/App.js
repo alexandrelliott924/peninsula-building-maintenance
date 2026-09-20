@@ -1,4 +1,4 @@
-import { useEffect, useContext } from 'react';
+﻿import { useEffect, useContext } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SuccessPageContext } from '../SuccessPageContext';
 import Header from'./header';
@@ -12,6 +12,7 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import SkilledMaintenance from './skilledWorkers';
 import TradeAssitant from './TradeAssitant';
 import LifeInKarratha from './lifeInKarratha';
+import NotFound from './notFound';
 
 function App() {
   const location = useLocation();
@@ -23,12 +24,13 @@ function App() {
   }, [location]);
 
   return (
-    <div>
+    <div className="app-wrapper">
       {!showSuccessPage && <Header />}
+      <main className="main-content">
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/index" element={<Navigate to="/home" replace />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/index" element={<Navigate to="/" replace />} />
         <Route path="/get-quote" element={<GetQuote />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/careers/skilled-maintenance" element={<SkilledMaintenance/>} />
@@ -36,10 +38,13 @@ function App() {
         <Route path="/careers/life-in-karratha" element={<LifeInKarratha/>} />
         <Route path="/about-us" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      </main>
       {!showSuccessPage && <Footer />}
     </div>
   );
 }
 
 export default App;
+
