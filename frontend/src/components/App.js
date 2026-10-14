@@ -23,6 +23,18 @@ function App() {
     window.scrollTo(0, 0);
   }, [location]);
 
+  //Canonical URL for each page (for Google)
+  useEffect(() => {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.rel = 'canonical';
+      document.head.appendChild(link);
+    }
+    const path = location.pathname === '/' ? '/' : location.pathname.replace(/\/$/, '');
+    link.href = `https://www.peninsula-bm.com.au${path}`;
+  }, [location.pathname]);
+  
   return (
     <div className="app-wrapper">
       {!showSuccessPage && <Header />}
