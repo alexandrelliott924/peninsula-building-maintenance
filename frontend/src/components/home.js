@@ -1,19 +1,19 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import buildingSunset from "../assets/home/buildings-sunset.jpg"
-import buildingRow from "../assets/home/Building-row.jpeg";
-import buildingInside from "../assets/home/Building-inside.jpeg";
-import forklift from "../assets/home/Forklift.jpeg";
+import image1 from "../assets/home/buildings-sunset.jpg"
+import image2 from "../assets/home/Before-After-building-restoration.png";
+import image3 from "../assets/home/Toilet-block-navy-divider.png";
+import image4 from "../assets/home/floor-cleaning.png";
 import '../styles/jumpButtons.css'
 
 
 function Home() {
     const homePhotos = [
-        { src: buildingSunset, alt:"Beautiful sunset over portable buildings"},
-        { src: buildingRow, alt:"Coates buildings"},
-        { src: buildingInside, alt: "Packed building"},
-        { src: forklift, alt: "Mila on a forklift"}
+        { src: image1, alt:"Beautiful sunset over portable buildings"},
+        { src: image2, alt:"Before/After building restoration"},
+        { src: image3, alt: "Ablution block with navy divider"},
+        { src: image4, alt: "Floor cleaning with polisher"}
     ];
     return (
         <div>

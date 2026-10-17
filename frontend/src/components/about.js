@@ -1,12 +1,13 @@
 import Photos from './photos';
 import Content from './content';
 import {NavLink} from 'react-router-dom';
-import photo from '../assets/about-us/moving-building.jpeg'
-
+import image1 from '../assets/about-us/Sunny-day.png'
+import image2 from '../assets/about-us/Before-After-6m-clean.png'
 
 function About() {
     const aboutPhotos = [
-        { src: photo, alt: "Moving building" }
+        { src: image1, alt: "Beautiful day in the Pilbara" },
+        { src: image2, alt: "Before/After cleaning and restoring 6m building"}
     ];
 
     return (

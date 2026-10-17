@@ -1,13 +1,17 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import photo from '../assets/careers/Happy-team.jpeg';
+import image1 from '../assets/careers/Roof-work.png';
+import image2 from '../assets/careers/Forklift-packing.png';
+import image3 from '../assets/careers/Wash-pad.png';
 import '../styles/careers.css';
 
 function Careers() {
 
     const aboutPhoto = [
-        {src: photo, alt: "Happy workforce on Wash Pad"}
+        {src: image1, alt: "Roof work in progress"},
+        {src: image2, alt: "Packing building with a forklift"},
+        {src: image3, alt: "Wash pad cleaning"}
     ]
     return (
         <div>

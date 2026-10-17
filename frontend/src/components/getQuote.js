@@ -1,13 +1,17 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import photo from '../assets/get-quote/front-building.png';
+import image1 from '../assets/get-quote/Carpenting.jpg';
+import image2 from '../assets/get-quote/Front-building-top.png';
+import image3 from '../assets/get-quote/kitchen.png';
 import '../styles/getQuote.css';
 import '../styles/jumpButtons.css';
 
 function GetQuote() {
     const aboutPhoto = [
-        {src: photo, alt:"front of portable building"}
+        {src: image1, alt:"Carpenter work in progress"},
+        {src: image2, alt:"Front of a cleaned and restored donga"},
+        {src: image3, alt:"Fixed kitchenette"}
     ];
     return(
         <div>
