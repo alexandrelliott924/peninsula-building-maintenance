@@ -1,17 +1,20 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import image1 from '../assets/careers/Roof-work.png';
-import image2 from '../assets/careers/Forklift-packing.png';
-import image3 from '../assets/careers/Wash-pad.png';
+import image1_desktop from '../assets/careers/Roof-work.png';
+import image2_desktop from '../assets/careers/Forklift-packing.png';
+import image3_desktop from '../assets/careers/Wash-pad.png';
+import image1_mobile from '../assets/careers/Roof-work-8x5.png';
+import image2_mobile from '../assets/careers/Forklift-packing-8x5.png';
+import image3_mobile from '../assets/careers/Wash-pad-8x5.png';
 import '../styles/careers.css';
 
 function Careers() {
 
     const aboutPhoto = [
-        {src: image1, alt: "Roof work in progress"},
-        {src: image2, alt: "Packing building with a forklift"},
-        {src: image3, alt: "Wash pad cleaning"}
+        {src: image1_desktop, mobile: image1_mobile, alt: "Roof work in progress"},
+        {src: image2_desktop, mobile: image2_mobile, alt: "Packing building with a forklift"},
+        {src: image3_desktop, mobile: image3_mobile, alt: "Wash pad cleaning"}
     ]
     return (
         <div>

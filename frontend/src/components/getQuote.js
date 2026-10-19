@@ -1,17 +1,20 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import image1 from '../assets/get-quote/Carpenting.jpg';
-import image2 from '../assets/get-quote/Front-building-top.png';
-import image3 from '../assets/get-quote/kitchen.png';
+import image1_desktop from '../assets/get-quote/Carpentry.jpg';
+import image2_desktop from '../assets/get-quote/Front-building.png';
+import image3_desktop from '../assets/get-quote/Kitchen.png';
+import image1_mobile from '../assets/get-quote/Carpentry-8x5.jpg';
+import image2_mobile from '../assets/get-quote/Front-building-8x5.png';
+import image3_mobile from '../assets/get-quote/Kitchen-8x5.png';
 import '../styles/getQuote.css';
 import '../styles/jumpButtons.css';
 
 function GetQuote() {
     const aboutPhoto = [
-        {src: image1, alt:"Carpenter work in progress"},
-        {src: image2, alt:"Front of a cleaned and restored donga"},
-        {src: image3, alt:"Fixed kitchenette"}
+        {src: image1_desktop, mobile: image1_mobile, alt:"Carpenter work in progress"},
+        {src: image2_desktop, mobile: image2_mobile, alt:"Front of a cleaned and restored donga"},
+        {src: image3_desktop, mobile: image3_mobile, alt:"Fixed kitchenette"}
     ];
     return(
         <div>

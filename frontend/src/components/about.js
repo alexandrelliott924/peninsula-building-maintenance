@@ -1,13 +1,15 @@
 import Photos from './photos';
 import Content from './content';
 import {NavLink} from 'react-router-dom';
-import image1 from '../assets/about-us/Sunny-day.png'
-import image2 from '../assets/about-us/Before-After-6m-clean.png'
+import image1_desktop from '../assets/about-us/Sunny-day.png'
+import image2_desktop from '../assets/about-us/Before-After-6m-clean.png'
+import image1_mobile from '../assets/about-us/Sunny-day-8x5.png'
+import image2_mobile from '../assets/about-us/Before-After-6m-clean-8x5.png'
 
 function About() {
     const aboutPhotos = [
-        { src: image1, alt: "Beautiful day in the Pilbara" },
-        { src: image2, alt: "Before/After cleaning and restoring 6m building"}
+        { src: image1_desktop, mobile: image1_mobile, alt: "Beautiful day in the Pilbara" },
+        { src: image2_desktop, mobile: image2_mobile, alt: "Before/After cleaning and restoring 6m building"}
     ];
 
     return (

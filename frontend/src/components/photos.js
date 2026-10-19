@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import "../styles/photos.css";
 
+// Screen width at or below which the mobile image is used.
+const MOBILE_BREAKPOINT = "(max-width: 768px)";
 
 function Photos({ photos }) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -86,12 +88,18 @@ function Photos({ photos }) {
                     onTransitionEnd={handleTransitionEnd}
                 >
                     {displayPhotos.map((photo, index) => (
-                        <img
-                            key={index}
-                            src={photo.src}
-                            alt={photo.alt}
-                            className="carousel-image"
-                        />
+                        // <picture> lets the browser pick the mobile file on small screens.
+                        // .carousel-picture uses display: contents so the <img> stays the slide item.
+                        <picture key={index} className="carousel-picture">
+                            {photo.mobile && (
+                                <source media={MOBILE_BREAKPOINT} srcSet={photo.mobile} />
+                            )}
+                            <img
+                                src={photo.src}
+                                alt={photo.alt}
+                                className="carousel-image"
+                            />
+                        </picture>
                     ))}
                 </div>
             </div>

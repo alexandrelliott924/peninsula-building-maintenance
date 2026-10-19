@@ -1,19 +1,23 @@
 import {NavLink} from 'react-router-dom';
 import Photos from './photos';
 import Content from './content';
-import image1 from "../assets/home/buildings-sunset.jpg"
-import image2 from "../assets/home/Before-After-building-restoration.png";
-import image3 from "../assets/home/Toilet-block-navy-divider.png";
-import image4 from "../assets/home/floor-cleaning.png";
+import image1_desktop from "../assets/home/Buildings-sunset.jpg"
+import image2_desktop from "../assets/home/Before-After-building-restoration.png";
+import image3_desktop from "../assets/home/Toilet-block-navy-divider.png";
+import image4_desktop from "../assets/home/Floor-polisher.png";
+import image1_mobile from "../assets/home/Buildings-sunset-8x5.jpg"
+import image2_mobile from "../assets/home/Before-After-building-restoration-8x5.png";
+import image3_mobile from "../assets/home/Toilet-block-navy-divider-8x5.png";
+import image4_mobile from "../assets/home/Floor-polisher-8x5.png";
 import '../styles/jumpButtons.css'
 
 
 function Home() {
     const homePhotos = [
-        { src: image1, alt:"Beautiful sunset over portable buildings"},
-        { src: image2, alt:"Before/After building restoration"},
-        { src: image3, alt: "Ablution block with navy divider"},
-        { src: image4, alt: "Floor cleaning with polisher"}
+        { src: image1_desktop, mobile: image1_mobile, alt:"Beautiful sunset over portable buildings"},
+        { src: image2_desktop, mobile: image2_mobile, alt:"Before/After building restoration"},
+        { src: image3_desktop, mobile: image3_mobile, alt: "Ablution block with navy divider"},
+        { src: image4_desktop, mobile: image4_mobile, alt: "Floor cleaning with polisher"}
     ];
     return (
         <div>
