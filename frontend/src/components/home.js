@@ -9,7 +9,10 @@ import image1_mobile from "../assets/home/Buildings-sunset-8x5.jpg"
 import image2_mobile from "../assets/home/Before-After-building-restoration-8x5.png";
 import image3_mobile from "../assets/home/Toilet-block-navy-divider-8x5.png";
 import image4_mobile from "../assets/home/Floor-polisher-8x5.png";
-import '../styles/jumpButtons.css'
+import install_image_desktop from "../assets/home/Install-image-horizontal.png";
+import install_image_mobile from "../assets/home/Install-image-vertical.png";
+import '../styles/jumpButtons.css';
+import '../styles/coming-soon.css';
 
 
 function Home() {
@@ -17,8 +20,9 @@ function Home() {
         { src: image1_desktop, mobile: image1_mobile, alt:"Beautiful sunset over portable buildings"},
         { src: image2_desktop, mobile: image2_mobile, alt:"Before/After building restoration"},
         { src: image3_desktop, mobile: image3_mobile, alt: "Ablution block with navy divider"},
-        { src: image4_desktop, mobile: image4_mobile, alt: "Floor cleaning with polisher"}
+        { src: image4_desktop, mobile: image4_mobile, alt: "Floor cleaning with polisher"},
     ];
+
     return (
         <div>
             <Photos photos={homePhotos}/>
@@ -36,6 +40,25 @@ function Home() {
                     creating sustainable employment opportunities, and building long-term partnerships 
                     with government and private sector clients.
                 </p>
+                <div className='coming-soon-banner'>
+                    <div className='coming-soon-images'>
+                        <picture>
+                            <source media='(max-width: 768px)' srcSet={install_image_mobile} />
+                            <img src= {install_image_desktop} 
+                                alt='Installing portable buildings' 
+                                className='install-image'>
+                            </img>
+                        </picture>
+                    </div>
+                    <div className='coming-soon-text'>
+                        <h3>
+                            Install services will be available soon! Enquire for further details.
+                        </h3>
+                        <button className='jump-button'>
+                            <NavLink to='/contact' state={{ subject: 'Get a quote' }}>Enquire<span className='arrow-right'>▶</span></NavLink>
+                        </button>
+                    </div>
+                </div>
                 <div className='jump-flex'>
                     <div className='jump-flex-layout-left' id='about-flex-layout' >
                         <div>

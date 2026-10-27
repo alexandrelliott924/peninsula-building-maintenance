@@ -1,0 +1,99 @@
+.coming-soon-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 0em;
+    width: 100vw;
+    margin: 4em calc(50% - 50vw);    
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    background-color: #f2f2f0;
+}
+
+.install-image {
+    display: block;
+    width: 85%;
+    margin: 0 auto;     /* centres the image inside the picture */
+    height: auto;
+}
+
+.coming-soon-images picture {
+    display: block;     
+    width: 100%;        
+}
+
+.coming-soon-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0em;
+}
+ 
+.coming-soon-text {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    color: #1a2e52;
+}
+
+ 
+.coming-soon-text h3 {
+    margin: 0;
+    font-size: 1.6em;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #1a2e52;
+
+}
+ 
+.coming-soon-text .jump-button {
+    width: auto;                  
+    background-color: #1a2e52;
+    padding: 0.2em 2em;
+}
+
+.coming-soon-text .jump-button a {
+    color: #f2f2f0;
+    font-size: large;
+    padding: 0.2em 3em;
+}
+ 
+/* ---------- Mobile ---------- */
+@media (max-width: 768px), (hover: none) {
+    .coming-soon-banner {
+        margin: 2.5em calc(50% - 50vw);   /* keep the full-width grey band */
+        padding: 1.25em 0 1.5em;          /* vertical only, so the grey reaches both edges */
+    }
+ 
+    .install-image {
+        width: 90%;                       /* a bit wider on small screens */
+    }
+ 
+    .coming-soon-text {
+        gap: 1.25em;
+        padding: 1.5em 1.25em 0;          /* side padding keeps text off the screen edges */
+        text-align: center;
+    }
+ 
+    .coming-soon-text h3 {
+        font-size: 1.25em;
+    }
+ 
+    .coming-soon-text .jump-button {
+        width: 90%;                       /* same width as the image */
+        max-width: 360px;
+        padding: 0;
+    }
+ 
+    .coming-soon-text .jump-button a {
+        display: block;
+        padding: 0.8em 1.5em;             /* comfortable tap target */
+        font-size: 1em;
+    }
+}
+ 
